@@ -12,7 +12,7 @@ funcAtivacao, limiar, u0 = 0.0, 0.0, 0.0
 f, y2, y1 = 0, 1, 0
 taxaAprendizado = 0.1
 
-def interacaoPerceptron(entradaX1, entradaX2, w):
+def interacaoPerceptron(w):
     n = 0
 
     while n < 10:
@@ -24,9 +24,7 @@ def interacaoPerceptron(entradaX1, entradaX2, w):
     print(f"Numero de treinamentos: {n}\n")
 
 
-def entradaX1(x1, u, y1, limiar, taxaAprendizado):
-    w, u = [], 0
-    print("Entrada  X1\n")
+def entradaX1(w, u):
     u0 = 0
 
     u0 = w[0]*x1[0][0] + w[1]*x1[u][0] + w[2]*x1[u][1]
@@ -49,8 +47,8 @@ def entradaX1(x1, u, y1, limiar, taxaAprendizado):
     return w
 
 
-def entradaX2 (w, u, x2, y2, limiar, taxaAprendizado):
-    w, u = [], 0
+def entradaX2 (w, u):
+    u0 = 0
     print("Entrada X2\n")
 
     u0 = 0

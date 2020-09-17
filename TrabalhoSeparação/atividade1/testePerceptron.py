@@ -10,7 +10,7 @@ x4 = ([-1,-1],
     [0.8,0.1],
     [0.95, 0.75])
 
-w = [0.22, -0.33,0.44]
+w = [0.22, -0.33, 0.44]
 
 interacaoPerceptron(w)
-verificaPerceptron(x3, x4, 2, 1)
+verificaPerceptron(w, x3, x4)

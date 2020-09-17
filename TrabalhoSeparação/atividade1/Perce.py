@@ -30,21 +30,21 @@ def entradaX1(w, u):
     print("Entrada X1")
 
     u0 = w[0]*x1[0][0] + w[1]*x1[u][0] + w[2]*x1[u][1]
-    print(f"u0 = {u0}")
+    print("u0 = %s" % {u0})
 
     if u0 > limiar:
         f = 1
     else:
         f = 0
 
-    print(f"valor de f = \t {f}")
+    print(f"valor de f = {f}")
 
     w[0]=w[0]+taxaAprendizado*(y1-f)*x1[0][0]
-    print("Pesos w =\t{w[0]}")
+    print("Pesos w = %s" % {w[0]})
     w[1]=w[1]+taxaAprendizado*(y1-f)*x1[u][0]
-    print("Pesos w =\t{w[1]}")
+    print("Pesos w = %s" % {w[1]})
     w[2]=w[2]+taxaAprendizado*(y1-f)*x1[u][1]
-    print("Pesos w =\t{w[2]}")
+    print("Pesos w = %s" % {w[2]})
 
     return w
 
@@ -65,11 +65,11 @@ def entradaX2 (w, u):
     print(f"Valor de f =\t{f}")
 
     w[0]=w[0]+taxaAprendizado*(y2-f)*x2[0][0]
-    print("Pesos w =\t{w[0]}")
+    print("Pesos w = %s" % {w[0]})
     w[1]=w[1]+taxaAprendizado*(y2-f)*x2[u][0]
-    print("Pesos w =\t{w[1]}")
+    print("Pesos w = %s" % {w[1]})
     w[2]=w[1]+taxaAprendizado*(y2-f)*x2[u][1]
-    print("Pesos w =\t{w[2]}")
+    print("Pesos w = %s" % {w[2]})
 
     return w
 
@@ -78,22 +78,29 @@ def verificaPerceptron(w, x1, x2):
     print("Teste da rede neural \n")
     for i in range(len(w)):
         print("Pesos resultante do treinamento")
-        printI = str(i)
-        printW = str(w[i])
-        print("w[" + printI + "] = " + printW)
+        print("w[" + str(i) + "] = " + str(w[i]))
     
 
     u0 = 0
-
-    for p in range(1, 3):
+    for p in range(1, 4):
         u0 = w[0]*x1[0][0] + w[1]*x1[p][0] + w[2]*x1[p][1]
-        printu0 = str(u0)
-        print("u0 = " + printu0)
+        print("u0 = " + str(u0))
 
-    if u0 > limiar:
-        f = 1
-    else:
-        f = 0
+        if u0 > limiar:
+            f = 1
+        else:
+            f = 0
 
-    printF = str(f)
-    print("Teste da entrada x2 saida y = " + printF)
+        print("Teste da entrada x1 saida y = " + str(f))
+
+    u0 = 0
+    for p in range(1, 4):
+        u0 = w[0]*x2[0][0] + w[1]*x2[p][0] + w[2]*x2[p][1]
+        print("u0 = " + str(u0))
+
+        if u0 > limiar:
+            f = 1
+        else:
+            f = 0
+
+        print("Teste da entrada x2 saida y = " + str(f))

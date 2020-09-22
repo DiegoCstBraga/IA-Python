@@ -21,13 +21,13 @@ def interacaoPerceptron(w):
             w = entradaX2(w,v)
         n = n + 1
     
-    print(f"Numero de treinamentos: {n}\n")
+        print(f"Numero de treinamentos: {n}\n")
 
 
 def entradaX1(w, u):
-    u0 = 0
     print("----------------------------------\n")
     print("Entrada X1")
+    u0 = 0
 
     u0 = w[0]*x1[0][0] + w[1]*x1[u][0] + w[2]*x1[u][1]
     print("u0 = %s" % {u0})
@@ -50,12 +50,11 @@ def entradaX1(w, u):
 
 
 def entradaX2 (w, u):
-    u0 = 0
     print("\nEntrada X2")
-
     u0 = 0
+
     u0 = w[0] * x2[0][0] + w[1]*x2[u][0]+w[2]*x2[u][1]
-    print(f"u0 = {u0}")
+    print("u0 = %s" % {u0})
 
     if u0 > limiar:
         f = 1
@@ -68,7 +67,7 @@ def entradaX2 (w, u):
     print("Pesos w = %s" % {w[0]})
     w[1]=w[1]+taxaAprendizado*(y2-f)*x2[u][0]
     print("Pesos w = %s" % {w[1]})
-    w[2]=w[1]+taxaAprendizado*(y2-f)*x2[u][1]
+    w[2]=w[2]+taxaAprendizado*(y2-f)*x2[u][1]
     print("Pesos w = %s" % {w[2]})
 
     return w

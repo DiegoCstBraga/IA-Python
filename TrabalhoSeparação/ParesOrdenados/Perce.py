@@ -1,14 +1,10 @@
-# x1 = ([-1, -1], [0.28, 0.676], [0.2652, 0.688], [0.22, 0.64])
+x1 = ([0.2, 0.64], [0.24, 0.68], [0.28, 0.72], [0.32, 0.76])
 
-# x2 = ([-1, -1], [0.338, 0.7], [0.36, 0.712], [0.42, 0.708])
-
-x1 = ([-1, -1], [0.24, 0.688], [0.28, 0.72], [0.32, 0.76])
-
-x2 = ([-1, -1], [0.28, 0.64], [0.356, 0.7], [0.42, 0.74])
+x2 = ([0.28, 0.64], [0.32, 0.68], [0.36, 0.72], [0.42, 0.76])
 
 funcAtivacao, limiar, u0 = 0.0, 0.0, 0.0
 f, classe0, classe1 = 0, 0, 1
-taxaAprendizado = 0.1
+taxaAprendizado = 0.12
 
 
 def interacaoPerceptron(w):
@@ -77,7 +73,7 @@ def verificaPerceptron(w, x1, x2):
         print("w[" + str(i) + "] = " + str(w[i]))
 
     u0 = 1
-    for p in range(1, 4):
+    for p in range(1, 7):
         u0 = w[0] * x1[0][0] + w[1] * x1[p][0] + w[2] * x1[p][1]
         print("\nu0 = " + str(u0))
 
@@ -89,7 +85,7 @@ def verificaPerceptron(w, x1, x2):
         print("Teste da entrada x1 saida y = " + str(f))
 
     u0 = 0
-    for p in range(1, 4):
+    for p in range(1, 7):
         u0 = w[0] * x2[0][0] + w[1] * x2[p][0] + w[2] * x2[p][1]
         print("\nu0 = " + str(u0))
 
